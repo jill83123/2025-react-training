@@ -126,13 +126,14 @@ const ProductDetailCard = ({ product }) => {
         <div className="d-flex flex-wrap gap-2">
           {[product.imageUrl, ...product.imagesUrl].map((url, index) => (
             <a
+              key={url}
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 setMainImageUrl(url);
               }}
             >
-              <img key={url} src={url} alt={`${product.title} ${index + 1}`} className="images" />
+              <img src={url} alt={`${product.title} ${index + 1}`} className="images" />
             </a>
           ))}
         </div>
